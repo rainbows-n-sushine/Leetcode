@@ -1,26 +1,24 @@
 class Solution:
-    def clearDigits(self, s:str)-> str:
+    def clearDigits(self, s:str)->str:
         res=[]
-        delete_cnt = 0
-        def isdigit(c):
-           return ord("0") <= ord(c) <= ord("9")
+        delete_count=0
 
+        def isDigit(c):
+            return ord("0") <= ord(c) <=ord("9")
+        
         for i in reversed(range(len(s))):
-            if isdigit(s[i]):
-                delete_cnt += 1
-            elif delete_cnt:
-                delete_cnt-=1
+            if s[i].isdigit():
+                delete_count+=1
+            elif delete_count:
+                delete_count-=1
             else:
                 res.append(s[i])
-        
+
         return "".join(res[::-1])
-    
 
 solution=Solution()
-
-input_string="abc3d4"
-
+input_string="abdy453"
 result=solution.clearDigits(input_string)
 print(result)
-            
 
+          
