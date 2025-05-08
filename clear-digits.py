@@ -1,3 +1,5 @@
+
+#Clear-digits-
 # first take a string input(Assuming that thestring is written in a such a way that characters come before digits and the preceeding characters are always greater or equal to the number of digits after)
 #loop through the reversed string
 # check if the current character is a digit, if so skip appending character and increase delete_count by adding 1 to it.
@@ -8,19 +10,23 @@
 class Solution:
     def clearDigits(self, s:str)->str:
         res=[]
-        delete_count=0
-        for i in reversed(range(len(s))):
-            if s[i].isdigit():
-                delete_count+=1
-            elif delete_count:
-                delete_count-=1
+
+        def isDigit(c):
+            return ord("0")<=ord(c)<=ord("9")
+
+        for i in range(len(s)):
+            if isDigit(s[i]):
+                res.pop()
             else:
                 res.append(s[i])
-        return "".join(res[::-1])
+
+        return "".join(res)
     
 solution=Solution()
-input_str="abcdsh665"
+input_str="abcg342"
 result=solution.clearDigits(input_str)
 print(result)
 
-     
+        
+
+        
