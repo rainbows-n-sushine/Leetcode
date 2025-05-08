@@ -1,4 +1,4 @@
-# first take a string input(Assuming that thestring is written in a such a way that characters come first before digits and the preceeding digits are always less or equal to the number of characters after)
+# first take a string input(Assuming that thestring is written in a such a way that characters come before digits and the preceeding characters are always greater or equal to the number of digits after)
 #loop through the reversed string
 # check if the current character is a digit, if so skip appending character and increase delete_count by adding 1 to it.
 # check if it is a character
