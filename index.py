@@ -8,14 +8,19 @@
 class Solution:
     def clearDigits(self, s:str)->str:
         res=[]
-        for i in range(len(s)):
+        delete_count=0
+        for i in reversed(range(len(s))):
             if s[i].isdigit():
-                res.pop()
+                delete_count+=1
+            elif delete_count:
+                delete_count-=1
             else:
                 res.append(s[i])
-        return "".join(res)
-
-solution= Solution()
-input_str="abcdfs6535"
+        return "".join(res[::-1])
+    
+solution=Solution()
+input_str="abcdsh665"
 result=solution.clearDigits(input_str)
 print(result)
+
+     
